@@ -1,0 +1,2441 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #08080d;
+    --panel: #11111a;
+    --panel-light: #181824;
+
+    --blue: #00bfff;
+    --yellow: #ffd900;
+    --purple: #a855f7;
+    --pink: #ff4fa3;
+
+    --text: #f5f5f5;
+    --muted: #9696a8;
+
+    --green: #39ff88;
+}
+
+
+/* FUNDO */
+
+body {
+    background: var(--bg);
+    color: var(--text);
+
+    font-family: 'Rajdhani', sans-serif;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+
+/* GRADE DO FUNDO */
+
+.grid-background {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: .15;
+
+    background-image:
+        linear-gradient(#b700ff 1px, transparent 1px),
+        linear-gradient(90deg, #00bfff 1px, transparent 1px);
+
+    background-size: 40px 40px;
+
+    z-index: -1;
+}
+
+
+/* HEADER */
+
+header {
+    width: 100%;
+
+    padding: 30px 7% 25px;
+
+    border-bottom: 2px solid var(--blue);
+
+    background: var(--panel);
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.logo span {
+    color: var(--yellow);
+
+    font-size: 28px;
+
+    text-shadow: 0 0 10px var(--yellow);
+}
+
+
+.logo h1 {
+    font-size: 27px;
+
+    letter-spacing: 2px;
+
+    color: var(--blue);
+
+    text-shadow: 0 0 10px var(--purple);
+}
+
+
+.subtitle {
+    margin-top: 8px;
+
+    color: var(--pink);
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+}
+
+
+/* MAIN */
+
+main {
+    width: 86%;
+
+    max-width: 1400px;
+
+    margin: auto;
+}
+
+
+.section {
+    padding: 45px 0;
+}
+
+
+.section-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+}
+
+
+.section-title span {
+    color: var(--yellow);
+
+    font-size: 13px;
+
+    border: 1px solid var(--yellow);
+
+    padding: 4px 7px;
+}
+
+
+.section-title h2 {
+    font-size: 20px;
+
+    letter-spacing: 2px;
+
+    color: var(--blue);
+}
+
+
+/* CARDS DE PERFIL */
+
+.profiles {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.profile-card {
+    background: var(--panel);
+
+    border: 2px solid var(--purple);
+
+    position: relative;
+
+    transition: .3s;
+
+    overflow: hidden;
+}
+
+
+.profile-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--pink);
+
+    box-shadow: 0 0 20px rgba(255, 79, 163, .2);
+}
+
+
+.profile-card.active {
+    border-color: var(--yellow);
+}
+
+
+/* ÁREA DA FOTO */
+
+.photo-area {
+    height: 240px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #0c0c14;
+
+    border-bottom: 2px solid var(--blue);
+
+    position: relative;
+}
+
+
+.photo-area::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 12px;
+
+    border: 1px dashed var(--purple);
+}
+
+
+.photo-area span {
+    font-size: 40px;
+
+    color: var(--pink);
+}
+
+
+.photo-area p {
+    color: var(--yellow);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    margin-top: 8px;
+}
+
+
+.card-info {
+    padding: 20px;
+}
+
+
+.label {
+    font-size: 10px;
+
+    color: var(--pink);
+
+    letter-spacing: 2px;
+}
+
+
+.card-info h3 {
+    margin-top: 5px;
+
+    font-size: 21px;
+
+    color: var(--blue);
+}
+
+
+.card-info p {
+    color: var(--muted);
+
+    margin-top: 8px;
+
+    font-size: 13px;
+}
+
+
+/* TABELAS */
+
+.table-container {
+    overflow-x: auto;
+
+    background: var(--panel);
+
+    border: 2px solid var(--blue);
+}
+
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+
+thead {
+    background: #181824;
+}
+
+
+th {
+    color: var(--yellow);
+
+    font-size: 12px;
+
+    letter-spacing: 1.5px;
+
+    padding: 17px;
+
+    text-align: left;
+}
+
+
+td {
+    padding: 16px;
+
+    border-top: 1px solid #292938;
+
+    color: #d4d4df;
+
+    font-size: 14px;
+}
+
+
+tbody tr:hover {
+    background: #191323;
+}
+
+
+.level {
+    color: var(--pink);
+
+    font-weight: 700;
+}
+
+
+
+/* MISSÕES */
+
+.mission-panel {
+    background: var(--panel);
+
+    border: 2px solid var(--pink);
+}
+
+
+.mission-header {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr;
+
+    padding: 15px 20px;
+
+    color: var(--yellow);
+
+    background: #181824;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+
+.mission {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr;
+
+    align-items: center;
+
+    padding: 20px;
+
+    border-top: 1px solid #292938;
+}
+
+
+.mission strong {
+    font-size: 15px;
+
+    color: var(--blue);
+}
+
+
+.mission p {
+    color: var(--muted);
+
+    font-size: 12px;
+
+    margin-top: 4px;
+}
+
+
+.operator {
+    color: var(--pink);
+
+    font-size: 13px;
+}
+
+
+.mission-status {
+    font-size: 10px;
+
+    padding: 6px 10px;
+
+    border: 1px solid;
+
+    display: inline-block;
+
+    letter-spacing: 1px;
+}
+
+
+.completed {
+    color: var(--green);
+
+    border-color: var(--green);
+}
+
+
+.progress {
+    color: var(--yellow);
+
+    border-color: var(--yellow);
+}
+
+
+.waiting {
+    color: var(--purple);
+
+    border-color: var(--purple);
+}
+
+
+/* VITÓRIAS */
+
+.victory {
+    font-size: 9px;
+
+    padding: 5px 8px;
+
+    border: 1px solid;
+
+    letter-spacing: 1px;
+}
+
+
+.normal {
+    color: var(--blue);
+
+    border-color: var(--blue);
+}
+
+
+.special {
+    color: var(--purple);
+
+    border-color: var(--purple);
+}
+
+
+.absolute {
+    color: var(--yellow);
+
+    border-color: var(--yellow);
+
+    box-shadow: 0 0 10px rgba(255, 217, 0, .2);
+}
+
+
+/* FOOTER */
+
+footer {
+    margin-top: 30px;
+
+    padding: 25px 7%;
+
+    border-top: 2px solid var(--purple);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+
+footer strong {
+    color: var(--green);
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 1100px) {
+
+    .kaiju-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .profiles {
+        grid-template-columns: 1fr;
+    }
+
+    .kaiju-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mission-header,
+    .mission {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    header {
+        padding: 25px 5%;
+    }
+
+    .logo h1 {
+        font-size: 20px;
+    }
+
+    main {
+        width: 90%;
+    }
+
+    .kaiju-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mission-header {
+        display: none;
+    }
+
+    .mission {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+    footer {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+}
+
+/* =========================
+   PAINEL DE CONTROLE
+========================== */
+
+.mission-control {
+
+    background: var(--panel);
+
+    border: 2px solid var(--yellow);
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+}
+
+
+.mission-control h3 {
+
+    color: var(--yellow);
+
+    font-size: 18px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+}
+
+
+#missionForm {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.form-group label {
+
+    color: var(--pink);
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+
+.form-group input,
+.form-group select {
+
+    width: 100%;
+
+    padding: 12px;
+
+    background: #09090f;
+
+    color: white;
+
+    border: 1px solid var(--purple);
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 14px;
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+
+    border-color: var(--blue);
+
+    box-shadow:
+        0 0 10px rgba(0, 191, 255, .2);
+}
+
+
+.form-buttons {
+
+    grid-column: 1 / -1;
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 5px;
+}
+
+
+.form-buttons button {
+
+    padding: 12px 20px;
+
+    border: 1px solid var(--blue);
+
+    background: var(--blue);
+
+    color: #050509;
+
+    font-family: inherit;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.form-buttons button:hover {
+
+    background: var(--yellow);
+
+    border-color: var(--yellow);
+}
+
+
+.form-buttons .cancel-button {
+
+    background: transparent;
+
+    color: var(--pink);
+
+    border-color: var(--pink);
+}
+
+
+.form-buttons .cancel-button:hover {
+
+    background: var(--pink);
+
+    color: white;
+}
+
+
+/* =========================
+   MISSÕES GERADAS
+========================== */
+
+.mission {
+
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr 120px;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    border-top: 1px solid #292938;
+}
+
+
+.mission strong {
+
+    font-size: 15px;
+
+    color: var(--blue);
+}
+
+
+.mission p {
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    margin-top: 4px;
+}
+
+
+.operator {
+
+    color: var(--pink);
+
+    font-size: 13px;
+}
+
+
+.mission-actions {
+
+    display: flex;
+
+    gap: 6px;
+}
+
+
+.mission-actions button {
+
+    padding: 6px 9px;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    border: 1px solid;
+}
+
+
+.edit-mission {
+
+    color: var(--yellow);
+
+    border-color: var(--yellow);
+}
+
+
+.edit-mission:hover {
+
+    background: var(--yellow);
+
+    color: black;
+}
+
+
+.delete-mission {
+
+    color: var(--pink);
+
+    border-color: var(--pink);
+}
+
+
+.delete-mission:hover {
+
+    background: var(--pink);
+
+    color: white;
+}
+
+
+/* STATUS */
+
+.mission-status {
+
+    font-size: 10px;
+
+    padding: 6px 10px;
+
+    border: 1px solid;
+
+    display: inline-block;
+
+    letter-spacing: 1px;
+}
+
+
+.completed {
+
+    color: var(--green);
+
+    border-color: var(--green);
+}
+
+
+.progress {
+
+    color: var(--yellow);
+
+    border-color: var(--yellow);
+}
+
+
+.waiting {
+
+    color: var(--purple);
+
+    border-color: var(--purple);
+}
+
+
+.pending {
+
+    color: var(--blue);
+
+    border-color: var(--blue);
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 800px) {
+
+    #missionForm {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .form-buttons {
+
+        grid-column: auto;
+
+        flex-direction: column;
+
+    }
+
+
+    .mission-header {
+
+        display: none;
+
+    }
+
+
+    .mission {
+
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+    }
+
+
+    .mission-actions {
+
+        margin-top: 5px;
+
+    }
+
+}
+
+
+
+/* =========================
+   IMAGENS DOS CARDS
+========================= */
+
+.photo-area {
+    height: 240px;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #0c0c14;
+}
+
+
+.photo-area input[type="file"] {
+    display: none;
+}
+
+
+.photo-area img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: none;
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+}
+
+
+.photo-area label {
+    position: absolute;
+
+    bottom: 15px;
+
+    z-index: 4;
+
+    padding: 8px 14px;
+
+    background: var(--purple);
+
+    color: white;
+
+    border: 1px solid var(--pink);
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+
+.photo-area label:hover {
+    background: var(--pink);
+
+    border-color: var(--yellow);
+
+    color: white;
+}
+
+
+.photo-area img[src=""] {
+    display: none;
+}
+
+/* =================================
+   PERSONAGENS
+================================= */
+
+.characters-grid {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-top: 25px;
+
+}
+
+
+/* =================================
+   CARD
+================================= */
+
+.character-card {
+
+    min-width: 0;
+
+    background: #0b0b12;
+
+    border: 1px solid var(--purple);
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: 0.25s ease;
+
+}
+
+
+.character-card:hover {
+
+    border-color: var(--blue);
+
+    transform: translateY(-4px);
+
+}
+
+
+/* =================================
+   ÁREA DA IMAGEM
+================================= */
+
+.photo-area {
+
+    width: 100%;
+
+    height: 420px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #080810;
+
+    border-bottom: 1px solid var(--blue);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* IMAGEM */
+
+.photo-area img {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    display: none;
+
+    background: #080810;
+
+    z-index: 2;
+
+}
+
+
+/* INPUT ORIGINAL */
+
+.photo-area input[type="file"] {
+
+    display: none;
+
+}
+
+
+/* BOTÃO */
+
+.photo-area label {
+
+    position: absolute;
+
+    bottom: 15px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 5;
+
+    white-space: nowrap;
+
+    padding: 10px 18px;
+
+    background: var(--pink);
+
+    color: white;
+
+    border: 1px solid var(--yellow);
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+}
+
+
+.photo-area label:hover {
+
+    background: var(--yellow);
+
+    color: #080810;
+
+}
+
+
+/* =================================
+   INFORMAÇÕES
+================================= */
+
+.character-info {
+
+    padding: 20px;
+
+}
+
+
+.character-label {
+
+    display: block;
+
+    color: var(--pink);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.character-info h3 {
+
+    margin: 0;
+
+    color: var(--blue);
+
+    font-size: 24px;
+
+}
+
+
+.character-info p {
+
+    margin-top: 10px;
+
+    color: #8b8b99;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =================================
+   RESPONSIVO
+================================= */
+
+@media (max-width: 1000px) {
+
+    .characters-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .characters-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .photo-area {
+
+        height: 380px;
+
+    }
+
+}
+
+/* =====================================================
+   KAIJUS E PLANETAS - NOVO VISUAL
+===================================================== */
+
+
+/* =====================================================
+   GRID DOS KAIJUS
+===================================================== */
+
+.kaiju-grid {
+
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 30px auto 70px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(280px, 1fr));
+
+    gap: 24px;
+
+}
+
+
+/* =====================================================
+   CARD DOS KAIJUS
+===================================================== */
+
+.kaiju-card {
+
+    width: 100%;
+
+    min-width: 0;
+
+    background: #0b0b13;
+
+    border: 1px solid #8b3dff;
+
+    overflow: hidden;
+
+    position: relative;
+
+    transition: 0.25s ease;
+
+}
+
+
+.kaiju-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: #00d9ff;
+
+}
+
+
+/* KAIJU DESBLOQUEADO */
+
+.kaiju-card.unlocked {
+
+    border-color: #8b3dff;
+
+}
+
+
+/* KAIJU BLOQUEADO */
+
+.kaiju-card.locked {
+
+    border-color: #8b3dff;
+
+}
+
+
+/* =====================================================
+   ÁREA DA IMAGEM DO KAIJU
+===================================================== */
+
+.kaiju-image {
+
+    width: 100%;
+
+    height: 340px;
+
+    background: #080810;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-bottom: 1px solid #252536;
+
+}
+
+
+/* =====================================================
+   INPUT DE ARQUIVO
+===================================================== */
+
+/*
+   IMPORTANTE:
+   Isso impede que apareça
+   "Nenhum arquivo escolhido"
+   dentro do card.
+*/
+
+.kaiju-image .image-input,
+.planet-image .image-input {
+
+    display: none !important;
+
+    position: absolute;
+
+    width: 0;
+
+    height: 0;
+
+    opacity: 0;
+
+}
+
+
+/* =====================================================
+   IMAGEM
+===================================================== */
+
+.kaiju-preview {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    display: none;
+
+    z-index: 2;
+
+}
+
+
+/* =====================================================
+   PLACEHOLDER DO KAIJU
+===================================================== */
+
+.kaiju-placeholder {
+
+    color: #8b3dff;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    z-index: 1;
+
+}
+
+
+.kaiju-question {
+
+    width: 80px;
+
+    height: 80px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 2px solid #8b3dff;
+
+    color: #8b3dff;
+
+    font-size: 42px;
+
+    font-weight: bold;
+
+    z-index: 1;
+
+}
+
+
+/* =====================================================
+   STATUS DO KAIJU
+===================================================== */
+
+.kaiju-status {
+
+    position: absolute;
+
+    top: 14px;
+
+    right: 14px;
+
+    padding: 6px 10px;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    z-index: 5;
+
+}
+
+
+.unlocked-status {
+
+    color: #00ff88;
+
+    border: 1px solid #00ff88;
+
+    background: #080810;
+
+}
+
+
+/* =====================================================
+   BOTÃO DE IMAGEM
+===================================================== */
+
+.kaiju-image .image-button,
+.planet-image .image-button {
+
+    position: absolute;
+
+    bottom: 14px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 10;
+
+    padding: 9px 16px;
+
+    background: #d946ef;
+
+    color: white;
+
+    border: 1px solid #ffdf00;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+}
+
+
+.kaiju-image .image-button:hover,
+.planet-image .image-button:hover {
+
+    background: #ffdf00;
+
+    color: #080810;
+
+}
+
+
+/* =====================================================
+   INFORMAÇÕES DO KAIJU
+===================================================== */
+
+.kaiju-info {
+
+    padding: 20px;
+
+}
+
+
+.kaiju-label {
+
+    display: block;
+
+    color: #d946ef;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.kaiju-info h3 {
+
+    margin: 0;
+
+    color: #00d9ff;
+
+    font-size: 20px;
+
+    line-height: 1.3;
+
+}
+
+
+.kaiju-card.locked .kaiju-info h3 {
+
+    color: #8b3dff;
+
+    font-size: 14px;
+
+}
+
+
+.kaiju-info p {
+
+    color: #858595;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    margin: 10px 0 0;
+
+}
+
+
+/* =====================================================
+   DADOS DO KAIJU
+===================================================== */
+
+.kaiju-data {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 18px;
+
+    padding-top: 14px;
+
+    border-top: 1px solid #292938;
+
+}
+
+
+.kaiju-data div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.kaiju-data span {
+
+    color: #777784;
+
+    font-size: 8px;
+
+}
+
+
+.kaiju-data strong {
+
+    color: #00ff88;
+
+    font-size: 9px;
+
+}
+
+
+.locked-status {
+
+    display: inline-block;
+
+    margin-top: 16px;
+
+    padding: 6px 12px;
+
+    color: #ff3d9a;
+
+    border: 1px solid #ff3d9a;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =====================================================
+   PLANETAS
+===================================================== */
+
+.planet-grid {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 30px auto 70px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(280px, 1fr));
+
+    gap: 24px;
+
+}
+
+
+/* =====================================================
+   CARD DO PLANETA
+===================================================== */
+
+.planet-card {
+
+    width: 100%;
+
+    min-width: 0;
+
+    background: #0b0b13;
+
+    border: 1px solid #8b3dff;
+
+    overflow: hidden;
+
+    position: relative;
+
+    transition: 0.25s ease;
+
+}
+
+
+.planet-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: #00d9ff;
+
+}
+
+
+.planet-card.unlocked {
+
+    border-color: #ffdf00;
+
+}
+
+
+/* =====================================================
+   IMAGEM DO PLANETA
+===================================================== */
+
+.planet-image {
+
+    width: 100%;
+
+    height: 300px;
+
+    background: #080810;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-bottom: 1px solid #252536;
+
+}
+
+
+.planet-preview {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    display: none;
+
+    z-index: 2;
+
+}
+
+
+.planet-placeholder {
+
+    color: #00d9ff;
+
+    font-size: 26px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    z-index: 1;
+
+}
+
+
+.planet-lock {
+
+    width: 80px;
+
+    height: 80px;
+
+    border: 2px solid #8b3dff;
+
+    color: #8b3dff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 42px;
+
+    font-weight: bold;
+
+    z-index: 1;
+
+}
+
+
+/* =====================================================
+   STATUS DO PLANETA
+===================================================== */
+
+.planet-status {
+
+    position: absolute;
+
+    top: 14px;
+
+    right: 14px;
+
+    padding: 6px 10px;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    z-index: 5;
+
+}
+
+
+/* =====================================================
+   INFORMAÇÕES DO PLANETA
+===================================================== */
+
+.planet-info {
+
+    padding: 20px;
+
+}
+
+
+.planet-label {
+
+    color: #d946ef;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.planet-info h3 {
+
+    margin-top: 8px;
+
+    color: #00d9ff;
+
+    font-size: 20px;
+
+}
+
+
+.planet-card.locked .planet-info h3 {
+
+    color: #8b3dff;
+
+    font-size: 14px;
+
+}
+
+
+.planet-info p {
+
+    color: #858595;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    margin-top: 10px;
+
+}
+
+
+.planet-data {
+
+    margin-top: 18px;
+
+    padding-top: 14px;
+
+    border-top: 1px solid #292938;
+
+}
+
+
+.planet-data span {
+
+    display: block;
+
+    color: #777784;
+
+    font-size: 8px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.planet-data strong {
+
+    color: #00ff88;
+
+    font-size: 9px;
+
+}
+
+
+.planet-locked-status {
+
+    display: inline-block;
+
+    margin-top: 16px;
+
+    padding: 6px 12px;
+
+    color: #ff3d9a;
+
+    border: 1px solid #ff3d9a;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =====================================================
+   RESPONSIVIDADE
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .kaiju-grid,
+    .planet-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(260px, 1fr));
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .kaiju-grid,
+    .planet-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+    }
+
+    .kaiju-image {
+
+        height: 320px;
+
+    }
+
+    .planet-image {
+
+        height: 280px;
+
+    }
+
+}
+
+/* =========================================
+   GERENCIADOR DE VITÓRIAS
+========================================= */
+
+.victory-control {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 25px auto;
+
+    padding: 25px;
+
+    background: #0b0b13;
+
+    border: 1px solid #af7cfc;
+
+}
+
+
+.victory-control h3 {
+
+    margin: 0 0 25px;
+
+    color: #00d9ff;
+
+    font-size: 18px;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* =========================================
+   FORMULÁRIO
+========================================= */
+
+.victory-control .form-group {
+
+    margin-bottom: 18px;
+
+}
+
+
+.victory-control label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #d946ef;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.victory-control input,
+.victory-control select {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 11px 12px;
+
+    background: #080810;
+
+    color: white;
+
+    border: 1px solid #34344a;
+
+    outline: none;
+
+    font-family: inherit;
+
+}
+
+
+.victory-control input:focus,
+.victory-control select:focus {
+
+    border-color: #00d9ff;
+
+}
+
+
+.victory-control select option {
+
+    background: #080810;
+
+    color: white;
+
+}
+
+
+/* =========================================
+   BOTÕES
+========================================= */
+
+.victory-control .form-buttons {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 20px;
+
+}
+
+
+.victory-control button {
+
+    padding: 11px 18px;
+
+    border: 1px solid #ffdf00;
+
+    background: #d577e4;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.victory-control button:hover {
+
+    background: #ffdf00;
+
+    color: #080810;
+
+}
+
+
+.victory-control .cancel-button {
+
+    background: transparent;
+
+    border-color: #ff3d9a;
+
+    color: #ff3d9a;
+
+}
+
+
+.victory-control .cancel-button:hover {
+
+    background: #ff3d9a;
+
+    color: white;
+
+}
+
+
+/* =========================================
+   PAINEL
+========================================= */
+
+.victory-panel {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 25px auto 60px;
+
+    border: 1px solid #ac7af8;
+
+    background: #0b0b13;
+
+    overflow-x: auto;
+
+}
+
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+.victory-header {
+
+    min-width: 900px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.2fr
+        1fr
+        1.2fr
+        1.2fr
+        2fr
+        1.2fr;
+
+    gap: 10px;
+
+    padding: 15px 18px;
+
+    background: #11111c;
+
+    border-bottom: 1px solid #a972fc;
+
+}
+
+
+.victory-header span {
+
+    color: #00d9ff;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================================
+   LINHA
+========================================= */
+
+.victory {
+
+    min-width: 900px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.2fr
+        1fr
+        1.2fr
+        1.2fr
+        2fr
+        1.2fr;
+
+    gap: 10px;
+
+    align-items: center;
+
+    padding: 18px;
+
+    border-bottom: 1px solid #252536;
+
+}
+
+
+.victory:last-child {
+
+    border-bottom: none;
+
+}
+
+
+/* =========================================
+   TEXTOS
+========================================= */
+
+.victory strong {
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+}
+
+
+.victory p {
+
+    margin: 4px 0 0;
+
+    color: #858595;
+
+    font-size: 10px;
+
+}
+
+
+.victory-date {
+
+    color: #ffdf00;
+
+    font-size: 10px;
+
+}
+
+
+.victory-responsible {
+
+    color: #00d9ff;
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================
+   STATUS DA VITÓRIA
+========================================= */
+
+.victory-status {
+
+    display: inline-block;
+
+    width: fit-content;
+
+    padding: 6px 9px;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.victory-status.normal {
+
+    color: #00d9ff;
+
+    border: 1px solid #00d9ff;
+
+}
+
+
+.victory-status.especial {
+
+    color: #e87df8;
+
+    border: 1px solid #ea83fa;
+
+}
+
+
+.victory-status.absoluta {
+
+    color: #ffdf00;
+
+    border: 1px solid #ffdf00;
+
+}
+
+
+/* =========================================
+   AÇÕES
+========================================= */
+
+.victory-actions {
+
+    display: flex;
+
+    gap: 7px;
+
+}
+
+
+.victory-actions button {
+
+    padding: 6px 9px;
+
+    background: transparent;
+
+    font-size: 8px;
+
+    cursor: pointer;
+
+    letter-spacing: 1px;
+
+}
+
+
+.edit-victory {
+
+    color: #00d9ff;
+
+    border: 1px solid #00d9ff;
+
+}
+
+
+.edit-victory:hover {
+
+    background: #00d9ff;
+
+    color: #080810;
+
+}
+
+
+.delete-victory {
+
+    color: #ff3d9a;
+
+    border: 1px solid #ff3d9a;
+
+}
+
+
+.delete-victory:hover {
+
+    background: #ff3d9a;
+
+    color: white;
+
+}
+
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+
+@media (max-width: 700px) {
+
+    .victory-control {
+
+        padding: 18px;
+
+    }
+
+    .victory-control .form-buttons {
+
+        flex-direction: column;
+
+    }
+
+}
+/* =========================================
+   TEXTOS DO HISTÓRICO DE VITÓRIAS
+========================================= */
+
+/* Nome do Kaiju */
+.victory strong {
+    color: #00d9ff;
+    font-size: 14px;
+}
+
+
+/* Data */
+.victory-date {
+    color: #ffdf00;
+    font-size: 12px;
+}
+
+
+/* Responsável */
+.victory-responsible {
+    color: #e87df8;
+    font-size: 12px;
+}
+
+
+/* Observação */
+.victory p {
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* Títulos do formulário */
+.victory-control h3 {
+    color: #00d9ff;
+    font-size: 21px;
+}
+
+
+/* Nomes dos campos */
+.victory-control label {
+    color: #ff3d9a;
+    font-size: 12px;
+}
+
+
+/* Texto dentro dos campos */
+.victory-control input,
+.victory-control select {
+    color: #ffffff;
+    font-size: 13px;
+}
+
+
+/* Cabeçalho da tabela */
+.victory-header span {
+    color: #ffdf00;
+    font-size: 11px;
+}
