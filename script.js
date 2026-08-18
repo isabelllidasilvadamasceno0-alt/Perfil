@@ -900,3 +900,256 @@ document.addEventListener("DOMContentLoaded", function () {
     mostrarVitorias();
 
 });
+// =====================================================
+// SISTEMA DE IMAGENS - KAIJUS E PLANETAS
+// =====================================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    // =================================================
+    // FUNÇÃO PARA CONFIGURAR UMA IMAGEM
+    // =================================================
+
+    function configurarImagem(
+        inputId,
+        previewId,
+        placeholderId,
+        storageKey
+    ) {
+
+        const input =
+            document.getElementById(inputId);
+
+        const preview =
+            document.getElementById(previewId);
+
+        const placeholder =
+            document.getElementById(placeholderId);
+
+
+        // Verifica se os elementos existem
+
+        if (
+            !input ||
+            !preview ||
+            !placeholder
+        ) {
+
+            console.error(
+                "Imagem não encontrada:",
+                inputId
+            );
+
+            return;
+
+        }
+
+
+        // =============================================
+        // CARREGAR IMAGEM SALVA
+        // =============================================
+
+        const imagemSalva =
+            localStorage.getItem(storageKey);
+
+
+        if (imagemSalva) {
+
+            preview.src =
+                imagemSalva;
+
+            preview.style.display =
+                "block";
+
+            placeholder.style.display =
+                "none";
+
+        }
+
+
+        // =============================================
+        // ESCOLHER NOVA IMAGEM
+        // =============================================
+
+        input.addEventListener(
+            "change",
+            function () {
+
+                const arquivo =
+                    input.files[0];
+
+
+                if (!arquivo) {
+
+                    return;
+
+                }
+
+
+                // Verifica se é imagem
+
+                if (
+                    !arquivo.type.startsWith("image/")
+                ) {
+
+                    alert(
+                        "Escolha um arquivo de imagem."
+                    );
+
+                    input.value = "";
+
+                    return;
+
+                }
+
+
+                const leitor =
+                    new FileReader();
+
+
+                leitor.onload =
+                    function (evento) {
+
+                        const imagem =
+                            evento.target.result;
+
+
+                        // Mostrar imagem
+
+                        preview.src =
+                            imagem;
+
+                        preview.style.display =
+                            "block";
+
+
+                        // Esconder placeholder
+
+                        placeholder.style.display =
+                            "none";
+
+
+                        // Salvar no navegador
+
+                        try {
+
+                            localStorage.setItem(
+                                storageKey,
+                                imagem
+                            );
+
+                        } catch (erro) {
+
+                            console.error(
+                                "Não foi possível salvar a imagem:",
+                                erro
+                            );
+
+                            alert(
+                                "A imagem é muito grande. Tente usar uma imagem menor."
+                            );
+
+                        }
+
+                    };
+
+
+                leitor.readAsDataURL(arquivo);
+
+            }
+        );
+
+    }
+
+
+
+    // =================================================
+    // KAIJUS
+    // =================================================
+
+    configurarImagem(
+        "kaijuInput1",
+        "kaijuPreview1",
+        "kaijuPlaceholder1",
+        "imagemKaiju1"
+    );
+
+
+    configurarImagem(
+        "kaijuInput2",
+        "kaijuPreview2",
+        "kaijuPlaceholder2",
+        "imagemKaiju2"
+    );
+
+
+    configurarImagem(
+        "kaijuInput3",
+        "kaijuPreview3",
+        "kaijuPlaceholder3",
+        "imagemKaiju3"
+    );
+
+
+    configurarImagem(
+        "kaijuInput4",
+        "kaijuPreview4",
+        "kaijuPlaceholder4",
+        "imagemKaiju4"
+    );
+
+
+    configurarImagem(
+        "kaijuInput5",
+        "kaijuPreview5",
+        "kaijuPlaceholder5",
+        "imagemKaiju5"
+    );
+
+
+
+    // =================================================
+    // PLANETAS
+    // =================================================
+
+    configurarImagem(
+        "planetInput1",
+        "planetPreview1",
+        "planetPlaceholder1",
+        "imagemPlaneta1"
+    );
+
+
+    configurarImagem(
+        "planetInput2",
+        "planetPreview2",
+        "planetPlaceholder2",
+        "imagemPlaneta2"
+    );
+
+
+    configurarImagem(
+        "planetInput3",
+        "planetPreview3",
+        "planetPlaceholder3",
+        "imagemPlaneta3"
+    );
+
+
+    configurarImagem(
+        "planetInput4",
+        "planetPreview4",
+        "planetPlaceholder4",
+        "imagemPlaneta4"
+    );
+
+
+    configurarImagem(
+        "planetInput5",
+        "planetPreview5",
+        "planetPlaceholder5",
+        "imagemPlaneta5"
+    );
+
+});
